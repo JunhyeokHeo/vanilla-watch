@@ -2,6 +2,6 @@
 
 Watch used by Vanilla JS
 
-![My image](username.github.com/repository/watch.jpg)
+![My image](junhyeokheo.github.com/vanilla-watch/watch.jpg)
 
 
