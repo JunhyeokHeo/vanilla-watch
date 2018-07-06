@@ -1,0 +1,54 @@
+body {
+  margin-top: 50px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+
+h2 {
+  margin-top: 100px;
+}
+
+p {
+  font-size: 50px;
+  font-weight: 800;
+  display: inline;
+}
+
+#watch {
+  width: 200px;
+  height: 200px;
+  position: relative;
+  border: 10px double #2e2e2e;
+  border-radius: 50%;
+  padding: 10px;
+}
+
+.bar {
+  width: 5px;
+  transform-origin: bottom;
+  position: absolute;
+  bottom: 50%;
+  right: 50%;
+  border-radius: 30%;
+}
+
+#time {
+ color: #2e2e2e;
+}
+
+
+#secondBar {
+  background-color: #00008b;
+  height: 100px;
+}
+#minuteBar {
+  background-color: violet;
+  height: 85px;
+}
+#hourBar {
+  background-color: darkgreen;
+  height: 75px;
+}
+

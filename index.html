@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Watch</title>
+  <link rel="stylesheet" href="./main.css">
+</head>
+
+<body>
+  <div id="watch">
+    <div id="secondBar" class="bar"></div>
+    <div id="minuteBar" class="bar"></div>
+    <div id="hourBar" class="bar"></div>
+  </div>
+  <h2>|CURRENT TIME|</h2>
+  <div id="time">
+    <p id="hour"></p>
+    <p id="minute"></p>
+    <p id="second"></p>
+  </div>
+  <script>
+    var secondBar = document.querySelector("#secondBar");
+    var minuteBar = document.querySelector("#minuteBar");
+    var hourBar = document.querySelector("#hourBar");
+    var second = document.querySelector("#second");
+    var minute = document.querySelector("#minute");
+    var hour = document.querySelector("#hour");
+
+    function showTime(date) {
+      if(date.getHours() < 10) {
+        hour.innerHTML = "0"+ date.getHours() + ":";
+      }else {
+        hour.innerHTML = date.getHours() + ":";
+      };
+      if (date.getMinutes() < 10) {
+        minute.innerHTML = "0" + date.getMinutes() + ":";
+      } else {
+        minute.innerHTML = date.getMinutes() + ":";
+      };
+      if(date.getSeconds() < 10) {
+        second.innerHTML = "0"+ date.getSeconds();
+      }else {
+        second.innerHTML = date.getSeconds();
+      };
+    }
+
+    function TickBar(date) {
+      if(date.getMinutes() < 20) {
+        hourBar.style.transform = "rotate(" + 30 * date.getHours() + "deg)";
+      }else if (20 < date.getMinutes() < 40) {
+        hourBar.style.transform = "rotate(" + (30 * date.getHours()+10)  + "deg)";
+      }else {
+        hourBar.style.transform = "rotate(" + (30 * date.getHours()+10)  + "deg)";
+      }
+      minuteBar.style.transform = "rotate(" + 6 * date.getMinutes() + "deg)";
+      secondBar.style.transform = "rotate(" + 6 * date.getSeconds() + "deg)";
+    }
+
+    function setWatch() {
+      var date = new Date();
+      showTime(date);
+      TickBar(date);
+    }
+
+    setInterval(setWatch, 1000);
+  </script>
+</body>
+</html>
